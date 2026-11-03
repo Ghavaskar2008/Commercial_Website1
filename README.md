@@ -985,7 +985,10 @@ renderCart();
 ```
 
 ## OUTPUT
-
-
+![alt text](<Screenshot 2026-11-03 082213.png>)
+![alt text](<Screenshot 2026-11-03 082219.png>)
+![alt text](<Screenshot 2026-11-03 082228.png>)
+![alt text](<Screenshot 2026-11-03 082234.png>)
+![alt text](<Screenshot 2026-11-03 082251.png>)
 ## RESULT
 The program for creating commercial website using CSS Flexbox is executed successfully.
