@@ -51,18 +51,250 @@ Deploy the website.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
+## HTML CODE:
 ```
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MotoMart | Motorcycle Sales</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoMart | Motorcycle Showroom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<style>
+    <header>
+        <a href="#" class="logo">Moto<span>Mart</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#bikes">Motorcycles</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#bikes" class="nav-button">Explore Bikes</a>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">FIND YOUR NEXT RIDE</p>
+            <h1>Ride Beyond<br>Every <span>Limit.</span></h1>
+            <p class="hero-description">
+                Discover motorcycles that match your style,
+                passion and adventure.
+            </p>
+            <a href="#bikes" class="primary-button">Explore Collection →</a>
+        </div>
+    </section>
+
+    <section class="bikes-section" id="bikes">
+        <div class="section-heading">
+            <p class="tagline">OUR COLLECTION</p>
+            <h2>Find Your <span>Perfect Bike</span></h2>
+            <p>Explore our collection of popular motorcycles.</p>
+        </div>
+
+        <div class="filters">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search motorcycle..."
+            >
+
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="sport">Sport</option>
+                <option value="cruiser">Cruiser</option>
+                <option value="street">Street</option>
+                <option value="adventure">Adventure</option>
+            </select>
+
+            <select id="sortFilter">
+                <option value="default">Sort by</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+            </select>
+        </div>
+
+        <div class="bike-grid" id="bikeGrid">
+
+            <article class="bike-card" data-name="Yamaha R15 V4"
+                data-category="sport" data-price="185000">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85"
+                    alt="Sport motorcycle">
+                <div class="bike-info">
+                    <span class="bike-category">SPORT</span>
+                    <h3>Yamaha R15 V4</h3>
+                    <p class="bike-description">Sporty design for exciting rides.</p>
+                    <div class="bike-bottom">
+                        <p class="price">₹1,85,000</p>
+                        <button class="enquire-button"
+                            onclick="addEnquiry('Yamaha R15 V4')">Enquire</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bike-card" data-name="Royal Enfield Classic 350"
+                data-category="cruiser" data-price="193000">
+                <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85"
+                    alt="Classic motorcycle">
+                <div class="bike-info">
+                    <span class="bike-category">CRUISER</span>
+                    <h3>Classic 350</h3>
+                    <p class="bike-description">Classic styling and comfortable rides.</p>
+                    <div class="bike-bottom">
+                        <p class="price">₹1,93,000</p>
+                        <button class="enquire-button"
+                            onclick="addEnquiry('Royal Enfield Classic 350')">Enquire</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bike-card" data-name="KTM Duke 390"
+                data-category="street" data-price="310000">
+                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=85"
+                    alt="Street motorcycle">
+                <div class="bike-info">
+                    <span class="bike-category">STREET</span>
+                    <h3>KTM Duke 390</h3>
+                    <p class="bike-description">Aggressive looks and thrilling performance.</p>
+                    <div class="bike-bottom">
+                        <p class="price">₹3,10,000</p>
+                        <button class="enquire-button"
+                            onclick="addEnquiry('KTM Duke 390')">Enquire</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bike-card" data-name="Adventure Motorcycle"
+                data-category="adventure" data-price="280000">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85"
+                    alt="Adventure motorcycle">
+                <div class="bike-info">
+                    <span class="bike-category">ADVENTURE</span>
+                    <h3>Adventure 300</h3>
+                    <p class="bike-description">Ready for long rides and exploration.</p>
+                    <div class="bike-bottom">
+                        <p class="price">₹2,80,000</p>
+                        <button class="enquire-button"
+                            onclick="addEnquiry('Adventure 300')">Enquire</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bike-card" data-name="Street 200"
+                data-category="street" data-price="165000">
+                <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=900&q=85"
+                    alt="Motorcycle on the road">
+                <div class="bike-info">
+                    <span class="bike-category">STREET</span>
+                    <h3>Street 200</h3>
+                    <p class="bike-description">A practical choice for everyday rides.</p>
+                    <div class="bike-bottom">
+                        <p class="price">₹1,65,000</p>
+                        <button class="enquire-button"
+                            onclick="addEnquiry('Street 200')">Enquire</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bike-card" data-name="Sport 250"
+                data-category="sport" data-price="220000">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85"
+                    alt="Sport bike">
+                <div class="bike-info">
+                    <span class="bike-category">SPORT</span>
+                    <h3>Sport 250</h3>
+                    <p class="bike-description">A sporty ride for motorcycle lovers.</p>
+                    <div class="bike-bottom">
+                        <p class="price">₹2,20,000</p>
+                        <button class="enquire-button"
+                            onclick="addEnquiry('Sport 250')">Enquire</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <p id="noResults" class="no-results" hidden>
+            No motorcycles found. Try another search.
+        </p>
+
+        <div class="enquiry-box">
+            <h3>Your Enquiry List</h3>
+            <p id="enquiryList">No motorcycles selected yet.</p>
+            <button class="primary-button" onclick="sendEnquiry()">
+                Send Enquiry
+            </button>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div>
+            <p class="tagline">WHY MOTOMART?</p>
+            <h2>Your Ride.<br><span>Your Rules.</span></h2>
+        </div>
+        <div class="about-text">
+            <p>
+                MotoMart is a motorcycle showroom website designed to help
+                riders explore different styles of bikes, compare prices
+                and send enquiries in one convenient place.
+            </p>
+            <div class="features">
+                <div><strong>01</strong><p>Multiple Models</p></div>
+                <div><strong>02</strong><p>Easy Bike Search</p></div>
+                <div><strong>03</strong><p>Quick Enquiries</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="section-heading">
+            <p class="tagline">GET IN TOUCH</p>
+            <h2>Let's Talk <span>Motorcycles</span></h2>
+            <p>Interested in a bike? Send us your details.</p>
+        </div>
+
+        <form id="contactForm">
+            <input type="text" id="customerName"
+                placeholder="Your name" required>
+            <input type="email" id="customerEmail"
+                placeholder="Your email address" required>
+            <textarea id="customerMessage"
+                placeholder="Which motorcycle are you interested in?"
+                required></textarea>
+            <button type="submit" class="primary-button">Submit Enquiry</button>
+            <p id="formMessage" role="status"></p>
+        </form>
+    </section>
+
+    <footer>
+        <a href="#home" class="logo">Moto<span>Mart</span></a>
+        <p>Find your ride. Start your adventure.</p>
+        <p class="copyright">© 2026 MotoMart. Demo website.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+## CSS code:
+```
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --background: #101010;
+    --card: #1b1b1b;
+    --orange: #ff6b24;
+    --white: #ffffff;
+    --muted: #aaaaaa;
 }
 
 html {
@@ -70,415 +302,342 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f1;
-    color: #17191b;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header {
-    background: white;
-    padding: 18px 6%;
+    min-height: 76px;
+    padding: 18px 7%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 24px;
+    background: #151515;
+    border-bottom: 1px solid #292929;
     position: sticky;
     top: 0;
-    z-index: 5;
-    border-bottom: 1px solid #ddd;
+    z-index: 10;
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: #17191b;
-    text-decoration: none;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
-.logo span {
-    color: #e84b2c;
+.logo span,
+.tagline,
+.section-heading h2 span,
+.hero h1 span,
+.about-section h2 span {
+    color: var(--orange);
 }
 
 nav {
     display: flex;
-    gap: 22px;
+    gap: 25px;
 }
 
 nav a {
-    text-decoration: none;
-    color: #333;
+    color: #dddddd;
+    font-size: 14px;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #e84b2c;
+    color: var(--orange);
 }
 
-button, input, select, textarea {
-    font: inherit;
-}
-
-button, .button {
-    cursor: pointer;
-}
-
-.cart-button {
-    border: 0;
-    border-radius: 25px;
-    background: #17191b;
+.nav-button,
+.primary-button {
+    display: inline-block;
+    background: var(--orange);
     color: white;
-    padding: 12px 17px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-button:hover,
+.primary-button:hover,
+.enquire-button:hover {
+    background: #e6530e;
+    transform: translateY(-2px);
 }
 
 .hero {
-    background: #171b1d;
-    color: white;
-    padding: 75px 9%;
-    min-height: 430px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    min-height: 570px;
+    padding: 100px 8%;
+    display: flex;
     align-items: center;
-    gap: 35px;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,0.94),
+        rgba(0,0,0,0.62), rgba(0,0,0,0.18)),
+        url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=90")
+        center 55% / cover no-repeat;
 }
 
-.eyebrow {
-    color: #e84b2c;
-    font-size: 12px;
+.hero-content {
+    max-width: 590px;
+}
+
+.tagline {
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 3px;
+    margin-bottom: 14px;
 }
 
 .hero h1 {
-    font-size: clamp(44px, 6vw, 78px);
-    line-height: 1;
-    letter-spacing: -3px;
-    margin: 18px 0;
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 1.08;
+    margin-bottom: 22px;
 }
 
-.hero h1 span {
-    color: #ff765b;
+.hero-description {
+    color: #dddddd;
+    max-width: 420px;
+    margin-bottom: 30px;
 }
 
-.hero p {
-    color: #c9cecf;
-    line-height: 1.8;
-    max-width: 450px;
+.bikes-section,
+.contact-section {
+    padding: 85px 7%;
 }
 
-.hero img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
 }
 
-.button {
-    display: inline-block;
-    padding: 14px 20px;
-    border: 0;
-    border-radius: 4px;
-    background: #e84b2c;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.section-heading h2,
+.about-section h2 {
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.2;
+    margin-bottom: 12px;
 }
 
-.highlights {
-    background: white;
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 25px 7%;
-}
-
-.highlights span {
-    display: block;
-    color: #70777b;
-    margin-top: 5px;
-    font-size: 13px;
-}
-
-section.content {
-    padding: 70px 9%;
-}
-
-h2 {
-    font-size: clamp(30px, 4vw, 45px);
-    letter-spacing: -1.5px;
-    margin: 10px 0 25px;
-}
-
-.section-intro {
-    color: #687078;
-    line-height: 1.7;
+.section-heading > p:last-child {
+    color: var(--muted);
 }
 
 .filters {
     display: grid;
-    grid-template-columns: 1fr 190px 190px;
-    gap: 12px;
-    margin: 25px 0;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+    margin: 35px 0;
 }
 
-input, select, textarea {
+.filters input,
+.filters select,
+.contact-section input,
+.contact-section textarea {
     width: 100%;
-    padding: 13px;
-    border: 1px solid #d5d8d6;
-    border-radius: 4px;
-    background: white;
+    background: #202020;
+    color: white;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    padding: 14px;
+    font-size: 14px;
+    outline: none;
+}
+
+.filters input:focus,
+.filters select:focus,
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: var(--orange);
+}
+
+.filters select option {
+    background: #202020;
 }
 
 .bike-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .bike-card {
-    background: white;
-    border: 1px solid #e1e2df;
-    border-radius: 7px;
     overflow: hidden;
+    background: var(--card);
+    border: 1px solid #292929;
+    border-radius: 10px;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
-.bike-photo {
-    height: 195px;
-    background: #e7e8e5;
-    overflow: hidden;
+.bike-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--orange);
 }
 
-.bike-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.bike-card img {
     display: block;
-    transition: transform 0.3s;
-}
-
-.bike-card:hover .bike-photo img {
-    transform: scale(1.04);
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #282828;
 }
 
 .bike-info {
-    padding: 19px;
+    padding: 20px;
 }
 
-.bike-type {
-    color: #e84b2c;
+.bike-category {
+    display: inline-block;
+    color: var(--orange);
     font-size: 11px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
 }
 
 .bike-info h3 {
-    margin: 9px 0;
-    font-size: 21px;
-}
-
-.bike-info p {
-    color: #687078;
-    line-height: 1.6;
-    font-size: 14px;
-    min-height: 45px;
-}
-
-.price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 18px;
-}
-
-.price {
     font-size: 20px;
-    font-weight: bold;
+    margin-bottom: 7px;
 }
 
-.add-button {
-    background: white;
-    border: 1px solid #17191b;
-    padding: 10px;
-    border-radius: 4px;
+.bike-description {
+    color: var(--muted);
+    font-size: 13px;
+    min-height: 42px;
 }
 
-.add-button:hover {
-    background: #17191b;
-    color: white;
-}
-
-.disclaimer {
-    font-size: 12px;
-    line-height: 1.6;
-    color: #777;
+.bike-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     margin-top: 20px;
 }
 
-.offer {
-    margin: 0 9%;
-    padding: 40px;
-    background: #e84b2c;
+.price {
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--orange);
+}
+
+.enquire-button {
+    padding: 10px 14px;
     color: white;
-    border-radius: 7px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
+    background: var(--orange);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.offer h2 {
-    margin-bottom: 10px;
+.no-results {
+    text-align: center;
+    color: var(--muted);
+    padding: 30px;
 }
 
-.offer p {
-    line-height: 1.7;
+.enquiry-box {
+    margin-top: 45px;
+    padding: 25px;
+    border: 1px solid #383838;
+    background: #181818;
+    border-radius: 8px;
 }
 
-.offer .button {
-    background: white;
-    color: #17191b;
-    white-space: nowrap;
+.enquiry-box h3 {
+    margin-bottom: 8px;
 }
 
-.three-columns {
+.enquiry-box p {
+    color: var(--muted);
+    margin-bottom: 18px;
+    overflow-wrap: anywhere;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    padding: 85px 9%;
+    background: #191919;
+}
+
+.about-text > p {
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.three-columns article {
-    border-top: 1px solid #bbb;
-    padding-top: 18px;
-}
-
-.three-columns p {
-    color: #687078;
-    line-height: 1.7;
-}
-
-.contact {
-    background: #e9eae7;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8%;
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.contact label {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-#formStatus {
-    color: #236b42;
-    line-height: 1.5;
-}
-
-footer {
-    text-align: center;
-    padding: 35px 8%;
-    background: #171b1d;
-    color: #c9cecf;
-}
-
-footer p {
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-footer .logo {
-    color: white;
-}
-
-.footer-note {
-    max-width: 800px;
-    margin: auto;
-    color: #9da5a8;
-}
-
-/* Enquiry cart */
-
-.overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    background: #0008;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.overlay[hidden] {
-    display: none;
-}
-
-.cart-panel {
-    background: white;
-    width: min(430px, 100%);
-    height: 100%;
-    padding: 25px;
-    overflow-y: auto;
-}
-
-.cart-heading,
-.cart-line,
-.cart-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 15px;
 }
 
-.cart-heading h2 {
-    font-size: 25px;
+.features div {
+    padding: 15px;
+    border-left: 2px solid var(--orange);
+    background: #222222;
 }
 
-.close-button {
-    background: none;
-    border: 0;
-    font-size: 30px;
+.features strong {
+    color: var(--orange);
+    font-size: 24px;
 }
 
-.cart-line {
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0;
-}
-
-.cart-line small {
-    display: block;
-    color: #777;
-    margin-top: 5px;
-}
-
-.remove-button {
-    background: none;
-    border: 0;
-    color: #e84b2c;
-}
-
-.cart-total {
-    border-top: 1px solid #ddd;
-    padding: 20px 0;
-    font-weight: bold;
-}
-
-.full-button {
-    width: 100%;
-}
-
-.small-note {
+.features p {
     font-size: 12px;
-    color: #777;
-    line-height: 1.6;
+    color: #cccccc;
 }
 
-@media (max-width: 800px) {
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 15px;
+}
+
+.contact-section textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.contact-section .primary-button {
+    justify-self: start;
+}
+
+#formMessage {
+    color: var(--orange);
+}
+
+footer {
+    padding: 35px 7%;
+    text-align: center;
+    background: #080808;
+    border-top: 1px solid #292929;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.copyright {
+    margin-top: 20px;
+}
+
+/* Tablet screens */
+@media (max-width: 900px) {
     header {
         flex-wrap: wrap;
     }
@@ -486,505 +645,195 @@ footer .logo {
     nav {
         order: 3;
         width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-        font-size: 14px;
-    }
-
-    .hero {
-        padding: 55px 7%;
-    }
-
-    section.content {
-        padding: 55px 7%;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .bike-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 470px;
+        padding: 70px 6%;
+        background-position: 60% center;
+    }
+
+    .bikes-section,
+    .contact-section {
+        padding: 60px 5%;
+    }
+
     .filters {
         grid-template-columns: 1fr;
     }
 
-    .contact {
-        gap: 35px;
-    }
-}
-
-@media (max-width: 550px) {
-    .hero {
+    .bike-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero img {
-        height: 220px;
+    .bike-card img {
+        height: 240px;
     }
 
-    .highlights {
-        flex-direction: column;
+    .about-section {
+        padding: 60px 6%;
     }
 
-    .bike-grid,
-    .three-columns,
-    .contact {
+    .features {
         grid-template-columns: 1fr;
     }
-
-    .offer {
-        margin: 0 5%;
-        padding: 28px;
-        display: block;
-    }
-
-    .offer .button {
-        margin-top: 10px;
-    }
 }
-</style>
-</head>
+```
+## Java Script Code:
+```
 
-<body>
-
-<header>
-    <a class="logo" href="#home">MOTO<span>MART</span></a>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#bikes">Bikes</a>
-        <a href="#offers">Offers</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <button class="cart-button" id="cartButton">
-        Enquiry cart (<span id="cartCount">0</span>)
-    </button>
-</header>
-
-<main>
-
-<section class="hero" id="home">
-    <div>
-        <p class="eyebrow">FIND YOUR NEXT RIDE</p>
-        <h1>Ride beyond<br><span>the ordinary.</span></h1>
-        <p>
-            Explore motorcycles for daily commutes, weekend escapes
-            and everything in between. Compare models and enquire today.
-        </p>
-        <a class="button" href="#bikes">Explore Bikes</a>
-    </div>
-
-    <img
-        src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
-        alt="Motorcycle on the road">
-</section>
-
-<div class="highlights">
-    <div><b>Wide choice</b><span>Different riding styles</span></div>
-    <div><b>Clear pricing</b><span>Sample prices displayed</span></div>
-    <div><b>Easy enquiry</b><span>Ask about availability</span></div>
-</div>
-
-<section class="content" id="bikes">
-    <p class="eyebrow">OUR COLLECTION</p>
-    <h2>Find the right bike</h2>
-    <p class="section-intro">
-        Search the collection, filter by category and compare indicative prices.
-    </p>
-
-    <div class="filters">
-        <input id="searchInput" type="search"
-               placeholder="Search by bike name or type..."
-               aria-label="Search bikes">
-
-        <select id="categoryFilter" aria-label="Filter bike category">
-            <option value="all">All categories</option>
-            <option value="commuter">Commuter</option>
-            <option value="sport">Sport</option>
-            <option value="cruiser">Cruiser</option>
-            <option value="adventure">Adventure</option>
-        </select>
-
-        <select id="sortFilter" aria-label="Sort bikes">
-            <option value="featured">Sort: Featured</option>
-            <option value="low">Price: Low to high</option>
-            <option value="high">Price: High to low</option>
-        </select>
-    </div>
-
-    <div class="bike-grid" id="bikeGrid"></div>
-    <p id="emptyMessage" hidden>No bikes found. Try another search.</p>
-
-    <p class="disclaimer">
-        *All prices shown are sample demonstration prices in Indian rupees.
-        They are not verified dealer quotations or guaranteed on-road prices.
-        Confirm current prices, taxes, specifications and availability with a dealer.
-    </p>
-</section>
-
-<section class="offer" id="offers">
-    <div>
-        <p class="eyebrow" style="color:#ffe2da">MOTOMART OFFERS</p>
-        <h2>Make your next move.</h2>
-        <p>
-            Ask our sales team about finance plans, exchange options
-            and test-ride availability.
-        </p>
-    </div>
-    <a class="button" href="#contact">Enquire Now</a>
-</section>
-
-<section class="content" id="about">
-    <p class="eyebrow">WHY MOTOMART</p>
-    <h2>A simpler way to choose.</h2>
-
-    <div class="three-columns">
-        <article>
-            <h3>01. Compare options</h3>
-            <p>Review motorcycle categories and indicative prices in one place.</p>
-        </article>
-
-        <article>
-            <h3>02. Know the details</h3>
-            <p>Read model highlights before contacting the sales team.</p>
-        </article>
-
-        <article>
-            <h3>03. Talk to us</h3>
-            <p>Send an enquiry about a model, price or test ride.</p>
-        </article>
-    </div>
-</section>
-
-<section class="content contact" id="contact">
-    <div>
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2>Let's find your ride.</h2>
-        <p class="section-intro">
-            Send an enquiry to ask about bike availability and final on-road pricing.
-        </p>
-
-        <p>
-            <b>Business address:</b> Add your store address<br><br>
-            <b>Phone:</b> Add your business phone number<br><br>
-            <b>Email:</b> Add your business email
-        </p>
-    </div>
-
-    <form id="contactForm">
-        <label for="customerName">Your name</label>
-        <input id="customerName" required placeholder="Enter your name">
-
-        <label for="customerEmail">Email address</label>
-        <input id="customerEmail" type="email" required
-               placeholder="you@example.com">
-
-        <label for="customerPhone">Phone number</label>
-        <input id="customerPhone" type="tel" placeholder="Optional">
-
-        <label for="customerMessage">Your enquiry</label>
-        <textarea id="customerMessage" rows="4" required
-                  placeholder="Which bike are you interested in?"></textarea>
-
-        <button class="button" type="submit">Submit Enquiry</button>
-        <p id="formStatus" role="status"></p>
-
-        <p class="small-note">
-            This demonstration form does not send customer details to a server.
-        </p>
-    </form>
-</section>
-
-</main>
-
-<footer>
-    <a class="logo" href="#home">MOTO<span>MART</span></a>
-    <p>© <span id="year"></span> MotoMart. Motorcycle sales website.</p>
-    <p class="footer-note">
-        Demo store. Replace sample inventory, prices and contact details before
-        publishing. Use properly licensed images and verify all product details.
-    </p>
-</footer>
-
-<div class="overlay" id="cartOverlay" hidden>
-    <aside class="cart-panel" role="dialog" aria-modal="true"
-           aria-labelledby="cartTitle">
-
-        <div class="cart-heading">
-            <h2 id="cartTitle">Your enquiry cart</h2>
-            <button class="close-button" id="closeCart"
-                    aria-label="Close cart">×</button>
-        </div>
-
-        <div id="cartItems">Your cart is empty.</div>
-
-        <div class="cart-total">
-            <span>Estimated total</span>
-            <span id="cartTotal">₹0</span>
-        </div>
-
-        <p class="small-note">
-            This is an enquiry estimate, not a confirmed purchase or booking.
-        </p>
-
-        <button class="button full-button" id="enquireCart">
-            Enquire About Selected Bikes
-        </button>
-    </aside>
-</div>
-
-<script>
-const bikes = [
-    {
-        id: 1,
-        name: "Metro 125",
-        category: "commuter",
-        type: "City commuter",
-        price: 95000,
-        image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85",
-        description: "A lightweight sample motorcycle for everyday city travel."
-    },
-    {
-        id: 2,
-        name: "Street 160",
-        category: "commuter",
-        type: "Daily commuter",
-        price: 125000,
-        image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
-        description: "An everyday motorcycle with a practical riding position."
-    },
-    {
-        id: 3,
-        name: "Racer 200",
-        category: "sport",
-        type: "Sport",
-        price: 185000,
-        image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85",
-        description: "A sporty sample model with an energetic design."
-    },
-    {
-        id: 4,
-        name: "Classic 350",
-        category: "cruiser",
-        type: "Classic cruiser",
-        price: 195000,
-        image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
-        description: "A classic-inspired motorcycle for relaxed rides."
-    },
-    {
-        id: 5,
-        name: "Trail 250",
-        category: "adventure",
-        type: "Adventure",
-        price: 220000,
-        image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85",
-        description: "An adventure-style sample bike for touring."
-    },
-    {
-        id: 6,
-        name: "Sport X 300",
-        category: "sport",
-        type: "Sport motorcycle",
-        price: 275000,
-        image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
-        description: "A dynamic sport-inspired sample motorcycle."
-    }
-];
-
-let cart = [];
-
-const bikeGrid = document.getElementById("bikeGrid");
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
 const sortFilter = document.getElementById("sortFilter");
+const bikeGrid = document.getElementById("bikeGrid");
+const noResults = document.getElementById("noResults");
 
-function formatPrice(price) {
-    return "₹" + price.toLocaleString("en-IN");
-}
+let enquiries = [];
 
-function renderBikes() {
-    const search = searchInput.value.trim().toLowerCase();
-    const category = categoryFilter.value;
+function filterBikes() {
+    const searchText = searchInput.value.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value;
+    const sortValue = sortFilter.value;
 
-    let filteredBikes = bikes.filter(function(bike) {
-        const matchesSearch =
-            bike.name.toLowerCase().includes(search) ||
-            bike.type.toLowerCase().includes(search);
+    const bikes = Array.from(
+        bikeGrid.querySelectorAll(".bike-card")
+    );
 
+    bikes.forEach(function (bike) {
+        const name = bike.dataset.name.toLowerCase();
+        const category = bike.dataset.category;
+
+        const matchesSearch = name.includes(searchText);
         const matchesCategory =
-            category === "all" || bike.category === category;
+            selectedCategory === "all" ||
+            category === selectedCategory;
 
-        return matchesSearch && matchesCategory;
+        bike.hidden = !(matchesSearch && matchesCategory);
     });
 
-    if (sortFilter.value === "low") {
-        filteredBikes.sort((a, b) => a.price - b.price);
-    } else if (sortFilter.value === "high") {
-        filteredBikes.sort((a, b) => b.price - a.price);
+    const visibleBikes = bikes.filter(function (bike) {
+        return !bike.hidden;
+    });
+
+    visibleBikes.sort(function (a, b) {
+        const priceA = Number(a.dataset.price);
+        const priceB = Number(b.dataset.price);
+
+        if (sortValue === "low") {
+            return priceA - priceB;
+        }
+
+        if (sortValue === "high") {
+            return priceB - priceA;
+        }
+
+        return bikes.indexOf(a) - bikes.indexOf(b);
+    });
+
+    visibleBikes.forEach(function (bike) {
+        bikeGrid.appendChild(bike);
+    });
+
+    noResults.hidden = visibleBikes.length !== 0;
+}
+
+searchInput.addEventListener("input", filterBikes);
+categoryFilter.addEventListener("change", filterBikes);
+sortFilter.addEventListener("change", filterBikes);
+
+function addEnquiry(bikeName) {
+    if (!enquiries.includes(bikeName)) {
+        enquiries.push(bikeName);
     }
 
-    bikeGrid.innerHTML = filteredBikes.map(function(bike) {
-        return `
-            <article class="bike-card">
-                <div class="bike-photo">
-                    <img
-                        src="${bike.image}"
-                        alt="${bike.name} motorcycle"
-                        loading="lazy"
-                        onerror="this.onerror=null;this.src='https://placehold.co/800x500/e7e8e5/17191b?text=Motorcycle+Photo';">
-                </div>
-
-                <div class="bike-info">
-                    <span class="bike-type">${bike.type}</span>
-                    <h3>${bike.name}</h3>
-                    <p>${bike.description}</p>
-
-                    <div class="price-row">
-                        <span class="price">${formatPrice(bike.price)}</span>
-                        <button class="add-button" data-add="${bike.id}">
-                            Add to enquiry
-                        </button>
-                    </div>
-                </div>
-            </article>
-        `;
-    }).join("");
-
-    document.getElementById("emptyMessage").hidden =
-        filteredBikes.length !== 0;
+    updateEnquiryList();
 }
 
-function addToCart(id) {
-    const bike = bikes.find(item => item.id === id);
-    const existingBike = cart.find(item => item.id === id);
+function updateEnquiryList() {
+    const enquiryList = document.getElementById("enquiryList");
 
-    if (existingBike) {
-        existingBike.quantity++;
-    } else {
-        cart.push({...bike, quantity: 1});
-    }
-
-    renderCart();
+    enquiryList.textContent = enquiries.length
+        ? enquiries.join(", ")
+        : "No motorcycles selected yet.";
 }
 
-function removeFromCart(id) {
-    cart = cart.filter(item => item.id !== id);
-    renderCart();
-}
-
-function renderCart() {
-    const itemCount = cart.reduce(
-        (total, item) => total + item.quantity, 0
-    );
-
-    const total = cart.reduce(
-        (sum, item) => sum + item.price * item.quantity, 0
-    );
-
-    document.getElementById("cartCount").textContent = itemCount;
-    document.getElementById("cartTotal").textContent = formatPrice(total);
-
-    const cartItems = document.getElementById("cartItems");
-
-    if (cart.length === 0) {
-        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+function sendEnquiry() {
+    if (enquiries.length === 0) {
+        alert("Please select a motorcycle first.");
         return;
     }
 
-    cartItems.innerHTML = cart.map(function(item) {
-        return `
-            <div class="cart-line">
-                <div>
-                    <b>${item.name}</b>
-                    <small>${item.quantity} × ${formatPrice(item.price)}</small>
-                </div>
+    const message = "I am interested in: " + enquiries.join(", ");
 
-                <button class="remove-button" data-remove="${item.id}">
-                    Remove
-                </button>
-            </div>
-        `;
-    }).join("");
-}
-
-function openCart() {
-    document.getElementById("cartOverlay").hidden = false;
-}
-
-function closeCart() {
-    document.getElementById("cartOverlay").hidden = true;
-}
-
-bikeGrid.addEventListener("click", function(event) {
-    const button = event.target.closest("[data-add]");
-
-    if (button) {
-        addToCart(Number(button.dataset.add));
-    }
-});
-
-document.getElementById("cartItems").addEventListener("click", function(event) {
-    const button = event.target.closest("[data-remove]");
-
-    if (button) {
-        removeFromCart(Number(button.dataset.remove));
-    }
-});
-
-searchInput.addEventListener("input", renderBikes);
-categoryFilter.addEventListener("change", renderBikes);
-sortFilter.addEventListener("change", renderBikes);
-
-document.getElementById("cartButton").addEventListener("click", openCart);
-document.getElementById("closeCart").addEventListener("click", closeCart);
-
-document.getElementById("cartOverlay").addEventListener("click", function(event) {
-    if (event.target.id === "cartOverlay") {
-        closeCart();
-    }
-});
-
-document.getElementById("enquireCart").addEventListener("click", function() {
-    if (cart.length === 0) {
-        alert("Please add a bike to your enquiry cart first.");
-        return;
-    }
-
-    const summary = cart.map(function(item) {
-        return item.name + " x " + item.quantity;
-    }).join(", ");
-
-    document.getElementById("customerMessage").value =
-        "I would like to enquire about: " + summary;
-
-    closeCart();
+    document.getElementById("customerMessage").value = message;
 
     document.getElementById("contact").scrollIntoView({
         behavior: "smooth"
     });
-});
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    document.getElementById("customerName").focus({
+        preventScroll: true
+    });
+}
 
-    document.getElementById("formStatus").textContent =
-        "Demo form checked successfully. To receive real enquiries, connect a backend or form service.";
+document.getElementById("contactForm").addEventListener(
+    "submit",
+    function (event) {
+        event.preventDefault();
 
-    this.reset();
-});
+        const name = document.getElementById("customerName").value.trim();
+        const email = document.getElementById("customerEmail").value.trim();
 
-document.getElementById("year").textContent = new Date().getFullYear();
+        if (!name || !email) {
+            alert("Please fill in your name and email.");
+            return;
+        }
 
-renderBikes();
-renderCart();
-</script>
+        document.getElementById("formMessage").textContent =
+            "Thank you, " + name +
+            "! Your demo enquiry has been prepared. This form does not send data to a server.";
 
-</body>
-</html>
+        this.reset();
+    }
+);
 ```
 
 ## OUTPUT
-
+![alt text](<Screenshot 2026-11-03 084616.png>)
+![alt text](<Screenshot 2026-11-03 084623.png>)
+![alt text](<Screenshot 2026-11-03 084628.png>)
+![alt text](<Screenshot 2026-11-03 084633.png>)
+![alt text](<Screenshot 2026-11-03 084637.png>)
 ## RESULT
 The program for creating commercial website using CSS Flexbox is executed successfully.
